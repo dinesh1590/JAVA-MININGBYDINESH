@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class NprNcr {
+    static int sum=1;
+
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter n value ");
+        int n = in.nextInt();
+        System.out.println("enter r value");
+        int r = in.nextInt();
+
+
+        NprNcr s = new NprNcr();
+
+        int Ncr = s.factt(n) / (s.factt(n - r) * s.factt(r));
+        int Npr = s.factt(n) / (s.factt(n - r));
+        System.out.println("NcR value : " + Ncr);
+        System.out.println("NcR value : " + Npr);
+    }
+
+        public int factt(int n) {
+            int sum = 1;
+
+            while (n > 0) {
+                sum = sum * n;
+                n--;
+            }
+            return sum;
+
+    }
+
+
+}
