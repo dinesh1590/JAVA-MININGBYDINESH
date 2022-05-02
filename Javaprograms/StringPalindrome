@@ -1,0 +1,30 @@
+public class StringPalindrome {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+
+        String sum = "";
+        char rev;
+        boolean run = true;
+        while(run){
+            System.out.println("Enter a string or press oa to exit");
+            String str = in.nextLine();
+            if( !str.equals("o")){
+                for (int i = 0; i < str.length(); i++) {
+                    rev= str.charAt(i);
+                    sum = rev + sum;
+                }
+                if ( str.equals(sum)){
+                    System.out.println("Palindrome");
+                }
+                else {
+                    System.out.println("not palindrome");
+                }
+                sum = "";
+
+            }else{
+                run = false;
+            }
+
+
+        }
