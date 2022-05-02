@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class RangeArmstrong {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter min value ");
+        int min = in.nextInt();
+        System.out.println("enter max value");
+        int max = in.nextInt();
+        int rem, sum = 0, temp, count = 0, temp1;
+
+
+        while (min < max) {
+            temp = min;
+
+
+
+            while (temp > 0) {
+                temp /= 10;
+                count++;
+            }
+
+
+
+            temp = min;
+            while (temp > 0) {
+                rem = temp % 10;
+                temp /= 10;
+                sum += Math.pow(rem, count);
+
+            }
+            if(sum==min)
+            {
+                System.out.println(sum +" is armstrong number");
+            }
+            sum=0;
+            min++;
+            count=0;
+
+
+
+        }
+    }
+}
